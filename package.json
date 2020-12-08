@@ -1,0 +1,34 @@
+{
+  "name": "sdf-object-converter",
+  "version": "1.0.0",
+  "description": "SDFObject to Thing Model Converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js ./models/SDFObject/sdf-object-example.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roman-kravtsov/sdf-object-converter.git"
+  },
+  "keywords": [
+    "sdf",
+    "thing",
+    "model"
+  ],
+  "author": "Roman Kravtsov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roman-kravtsov/sdf-object-converter/issues"
+  },
+  "homepage": "https://github.com/roman-kravtsov/sdf-object-converter#readme",
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "prettier": "2.1.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
