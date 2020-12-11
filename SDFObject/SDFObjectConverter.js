@@ -153,7 +153,7 @@ class SDFObjectConverter extends Converter {
    * Convert sdfObject to a Thing Model
    * @returns {Object} Thing Model
    */
-  async convert() {
+  convert() {
     const now = new Date(Date.now());
     this.targetModel.created = now;
     this.targetModel.modified = now;

@@ -1,1 +1,433 @@
-{}
+{
+	"properties": {
+		"CurrentLevel": {
+			"name": "CurrentLevel",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/CurrentLevel",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"RemainingTime": {
+			"name": "RemainingTime",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/RemainingTime",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"MinLevel": {
+			"name": "MinLevel",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/MinLevel",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"MaxLevel": {
+			"name": "MaxLevel",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/MaxLevel",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"CurrentFrequency": {
+			"name": "CurrentFrequency",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/CurrentFrequency",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"MinFrequency": {
+			"name": "MinFrequency",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/MinFrequency",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"MaxFrequency": {
+			"name": "MaxFrequency",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/MaxFrequency",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"OnOffTransitionTime": {
+			"name": "OnOffTransitionTime",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/OnOffTransitionTime",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"OnLevel": {
+			"name": "OnLevel",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/OnLevel",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"OnTransitionTime": {
+			"name": "OnTransitionTime",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/OnTransitionTime",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"OffTransitionTime": {
+			"name": "OffTransitionTime",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/OffTransitionTime",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"DefaultMoveRate": {
+			"name": "DefaultMoveRate",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/DefaultMoveRate",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"Options": {
+			"name": "Options",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/Options",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"StartUpCurrentLevel": {
+			"name": "StartUpCurrentLevel",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/StartUpCurrentLevel",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		},
+		"StartUpCurrentLevelSpecialValues": {
+			"name": "StartUpCurrentLevelSpecialValues",
+			"input": {
+				"type": "boolean",
+				"properties": {
+					"value": {
+						"type": "boolean"
+					}
+				}
+			},
+			"forms": [
+				{
+					"href": "/actions/StartUpCurrentLevelSpecialValues",
+					"contentType": "application/json"
+				}
+			],
+			"readOnly": true
+		}
+	},
+	"actions": {
+		"MoveToLevel": {
+			"name": "MoveToLevel",
+			"input": {
+				"description": "implemented as a bitmap, modeled as an array with unique items",
+				"type": "array",
+				"uniqueItems": true,
+				"items": {
+					"type": "string",
+					"enum": [
+						"ExecuteIfOff",
+						"CoupleColorTempToLevel"
+					]
+				}
+			},
+			"forms": [
+				{
+					"href": "/properties/MoveToLevel",
+					"contentType": "application/json"
+				}
+			]
+		},
+		"Move": {
+			"name": "Move",
+			"input": {
+				"description": "implemented as a bitmap, modeled as an array with unique items",
+				"type": "array",
+				"uniqueItems": true,
+				"items": {
+					"type": "string",
+					"enum": [
+						"ExecuteIfOff",
+						"CoupleColorTempToLevel"
+					]
+				}
+			},
+			"forms": [
+				{
+					"href": "/properties/Move",
+					"contentType": "application/json"
+				}
+			]
+		},
+		"Step": {
+			"name": "Step",
+			"input": {
+				"description": "implemented as a bitmap, modeled as an array with unique items",
+				"type": "array",
+				"uniqueItems": true,
+				"items": {
+					"type": "string",
+					"enum": [
+						"ExecuteIfOff",
+						"CoupleColorTempToLevel"
+					]
+				}
+			},
+			"forms": [
+				{
+					"href": "/properties/Step",
+					"contentType": "application/json"
+				}
+			]
+		},
+		"Stop": {
+			"name": "Stop",
+			"input": {
+				"description": "implemented as a bitmap, modeled as an array with unique items",
+				"type": "array",
+				"uniqueItems": true,
+				"items": {
+					"type": "string",
+					"enum": [
+						"ExecuteIfOff",
+						"CoupleColorTempToLevel"
+					]
+				}
+			},
+			"forms": [
+				{
+					"href": "/properties/Stop",
+					"contentType": "application/json"
+				}
+			]
+		},
+		"MoveToLevelwithOnOff": {
+			"name": "MoveToLevelwithOnOff",
+			"input": {},
+			"forms": [
+				{
+					"href": "/properties/MoveToLevelwithOnOff",
+					"contentType": "application/json"
+				}
+			]
+		},
+		"MovewithOnOff": {
+			"name": "MovewithOnOff",
+			"input": {},
+			"forms": [
+				{
+					"href": "/properties/MovewithOnOff",
+					"contentType": "application/json"
+				}
+			]
+		},
+		"StepwithOnOff": {
+			"name": "StepwithOnOff",
+			"input": {},
+			"forms": [
+				{
+					"href": "/properties/StepwithOnOff",
+					"contentType": "application/json"
+				}
+			]
+		},
+		"StopwithOnOff": {
+			"name": "StopwithOnOff",
+			"input": {},
+			"forms": [
+				{
+					"href": "/properties/StopwithOnOff",
+					"contentType": "application/json"
+				}
+			]
+		},
+		"MoveToClosestFrequency": {
+			"name": "MoveToClosestFrequency",
+			"input": {
+				"type": "number",
+				"minimum": 0,
+				"maximum": 65535
+			},
+			"forms": [
+				{
+					"href": "/properties/MoveToClosestFrequency",
+					"contentType": "application/json"
+				}
+			]
+		}
+	},
+	"events": {
+		"overLevelEvent": {
+			"name": "overLevelEvent",
+			"input": {},
+			"forms": [
+				{
+					"href": "/properties/overLevelEvent",
+					"contentType": "application/json"
+				}
+			],
+			"data": {
+				"type": "number",
+				"minimum": 0,
+				"maximum": 254
+			}
+		}
+	},
+	"created": "2020-12-11T09:51:19.864Z",
+	"modified": "2020-12-11T09:51:19.864Z"
+}

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js ./models/SDFObject/sdf-object-example.json"
+    "start": "node index.js ./SDFObject/sdf-object-example.json"
   },
   "repository": {
     "type": "git",
