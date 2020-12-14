@@ -158,6 +158,7 @@ class SDFObjectConverter extends Converter {
     this.targetModel.created = now;
     this.targetModel.modified = now;
     this.targetModel["@context"] = ["https://www.w3.org/2019/wot/td/v1"];
+    this.targetModel["@type"] = "Thing";
     this.targetModel.title = this.sdfObject.info.title;
     this.mapProperties();
     this.mapActions();
