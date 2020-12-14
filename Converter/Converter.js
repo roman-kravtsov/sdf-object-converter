@@ -45,19 +45,19 @@ class Converter {
     return {
       name,
       input: {
-        type: 'boolean',
+        type: "boolean",
         properties: {
           value: {
-            type: 'boolean',
+            type: "boolean",
           },
         },
       },
-      forms: [
-        {
-          href: `/actions/${name}`,
-          contentType: 'application/json',
-        },
-      ],
+      // forms: [
+      //   {
+      //     href: `/actions/${name}`,
+      //     contentType: 'application/json',
+      //   },
+      // ],
     };
   }
 
@@ -70,7 +70,7 @@ class Converter {
     return {
       name,
       input: {},
-      forms: [{ href: `/properties/${name}` }],
+      // forms: [{ href: `/properties/${name}` }],
     };
   }
 
@@ -83,7 +83,7 @@ class Converter {
     return {
       name,
       input: {},
-      forms: [{ href: `/properties/${name}` }],
+      // forms: [{ href: `/properties/${name}` }],
     };
   }
 
@@ -98,7 +98,7 @@ class Converter {
     return [
       {
         href: `${href}`,
-        contentType: 'application/json',
+        contentType: "application/json",
       },
     ];
   }

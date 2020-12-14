@@ -91,9 +91,9 @@ class SDFObjectConverter extends Converter {
         sdfProperty.type
       );
       thingModelProperty.readOnly = !sdfProperty.writable;
-      thingModelProperty.forms = this.__generateThingModelForms(
-        thingModelProperty.forms[0].href
-      );
+      // thingModelProperty.forms = this.__generateThingModelForms(
+      //   thingModelProperty.forms[0].href
+      // );
       this.targetModel.properties[property] = thingModelProperty;
     }
   }
@@ -116,9 +116,9 @@ class SDFObjectConverter extends Converter {
         }
       }
 
-      thingModelAction.forms = this.__generateThingModelForms(
-        thingModelAction.forms[0].href
-      );
+      // thingModelAction.forms = this.__generateThingModelForms(
+      //   thingModelAction.forms[0].href
+      // );
       this.targetModel.actions[property] = thingModelAction;
     }
   }
@@ -142,9 +142,9 @@ class SDFObjectConverter extends Converter {
         }
       }
 
-      thingModelEvent.forms = this.__generateThingModelForms(
-        thingModelEvent.forms[0].href
-      );
+      // thingModelEvent.forms = this.__generateThingModelForms(
+      //   thingModelEvent.forms[0].href
+      // );
       this.targetModel.events[property] = thingModelEvent;
     }
   }
