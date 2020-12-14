@@ -428,6 +428,10 @@
 			}
 		}
 	},
-	"created": "2020-12-11T09:51:19.864Z",
-	"modified": "2020-12-11T09:51:19.864Z"
+	"created": "2020-12-14T10:39:40.881Z",
+	"modified": "2020-12-14T10:39:40.881Z",
+	"@context": [
+		"https://www.w3.org/2019/wot/td/v1"
+	],
+	"title": "Example SDF model for the ZCL Level cluster"
 }

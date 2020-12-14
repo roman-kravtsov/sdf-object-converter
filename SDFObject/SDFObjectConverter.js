@@ -157,6 +157,8 @@ class SDFObjectConverter extends Converter {
     const now = new Date(Date.now());
     this.targetModel.created = now;
     this.targetModel.modified = now;
+    this.targetModel["@context"] = ["https://www.w3.org/2019/wot/td/v1"];
+    this.targetModel.title = this.sdfObject.info.title;
     this.mapProperties();
     this.mapActions();
     this.mapEvents();
