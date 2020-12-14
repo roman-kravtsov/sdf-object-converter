@@ -36,8 +36,14 @@ node index.js <Aboslute/Relative path to a SDF-Object.json file>
 * #### Contents of `sdfProperty` are mapped to the contents of `properties` key of a Thing Model.
 * #### Contents of `sdfAction` are mapped to the contents of `actions` key of a Thing Model.
 * #### Contents of `sdfEvent` are mapped to the contents of `events` key of a Thing model.
+* #### Only `title` attribute is used from `info` property. It is mapped to Thing Model's `title`
   
 If an `sdfProperty`, `sdfAction` or `sdfEvent` property contain an `sdfRef`, then the referenced object is searched and inserted directly in the corresponding property of a Thing Model.
 
 # To Do
 1. Reference logic is also supported by Thing Model and json-ld. A referenced object in a `SDF Object` will also be mapped to the `definitions` property of a Thing Model, therefore all following properties of a Thing Model will also reference to a corresponding object.
+2. Support `sdfChoice` data type. Properly map it to `enum` type.
+3. Support `sdfRequired` property by mapping it to the referred property and adding a `required: true` keypair.
+
+# Acknowledgements
+1. `uniqueItems` data quality is currently not supported.
