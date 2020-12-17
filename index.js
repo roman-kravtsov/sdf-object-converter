@@ -14,7 +14,6 @@ function convert() {
   const sdfObjectConverter = new SDFObjectConverter(sdfObject);
   const thingModel = sdfObjectConverter.convert();
   const thingModelJSON = JSON.stringify(thingModel, null, "\t");
-  console.log(thingModel);
   fs.writeFileSync("./generated-thing-model.json", thingModelJSON);
 }
 
