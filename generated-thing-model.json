@@ -10,7 +10,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": true
 		},
 		"RemainingTime": {
 			"name": "RemainingTime",
@@ -22,7 +23,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"MinLevel": {
 			"name": "MinLevel",
@@ -34,7 +36,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"MaxLevel": {
 			"name": "MaxLevel",
@@ -46,7 +49,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"CurrentFrequency": {
 			"name": "CurrentFrequency",
@@ -58,7 +62,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"MinFrequency": {
 			"name": "MinFrequency",
@@ -70,7 +75,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"MaxFrequency": {
 			"name": "MaxFrequency",
@@ -82,7 +88,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"OnOffTransitionTime": {
 			"name": "OnOffTransitionTime",
@@ -94,7 +101,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"OnLevel": {
 			"name": "OnLevel",
@@ -106,7 +114,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"OnTransitionTime": {
 			"name": "OnTransitionTime",
@@ -118,7 +127,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"OffTransitionTime": {
 			"name": "OffTransitionTime",
@@ -130,7 +140,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"DefaultMoveRate": {
 			"name": "DefaultMoveRate",
@@ -142,7 +153,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"Options": {
 			"name": "Options",
@@ -154,7 +166,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"StartUpCurrentLevel": {
 			"name": "StartUpCurrentLevel",
@@ -166,7 +179,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		},
 		"StartUpCurrentLevelSpecialValues": {
 			"name": "StartUpCurrentLevelSpecialValues",
@@ -178,7 +192,8 @@
 					}
 				}
 			},
-			"readOnly": true
+			"readOnly": true,
+			"required": false
 		}
 	},
 	"actions": {
@@ -195,7 +210,8 @@
 						"CoupleColorTempToLevel"
 					]
 				}
-			}
+			},
+			"required": true
 		},
 		"Move": {
 			"name": "Move",
@@ -210,7 +226,8 @@
 						"CoupleColorTempToLevel"
 					]
 				}
-			}
+			},
+			"required": true
 		},
 		"Step": {
 			"name": "Step",
@@ -225,7 +242,8 @@
 						"CoupleColorTempToLevel"
 					]
 				}
-			}
+			},
+			"required": true
 		},
 		"Stop": {
 			"name": "Stop",
@@ -240,23 +258,28 @@
 						"CoupleColorTempToLevel"
 					]
 				}
-			}
+			},
+			"required": true
 		},
 		"MoveToLevelwithOnOff": {
 			"name": "MoveToLevelwithOnOff",
-			"input": {}
+			"input": {},
+			"required": true
 		},
 		"MovewithOnOff": {
 			"name": "MovewithOnOff",
-			"input": {}
+			"input": {},
+			"required": true
 		},
 		"StepwithOnOff": {
 			"name": "StepwithOnOff",
-			"input": {}
+			"input": {},
+			"required": true
 		},
 		"StopwithOnOff": {
 			"name": "StopwithOnOff",
-			"input": {}
+			"input": {},
+			"required": true
 		},
 		"MoveToClosestFrequency": {
 			"name": "MoveToClosestFrequency",
@@ -264,7 +287,8 @@
 				"type": "number",
 				"minimum": 0,
 				"maximum": 65535
-			}
+			},
+			"required": false
 		}
 	},
 	"events": {
@@ -275,13 +299,15 @@
 				"type": "number",
 				"minimum": 0,
 				"maximum": 254
-			}
+			},
+			"required": false
 		}
 	},
-	"created": "2020-12-14T10:46:01.357Z",
-	"modified": "2020-12-14T10:46:01.357Z",
+	"created": "2020-12-17T15:48:26.027Z",
+	"modified": "2020-12-17T15:48:26.027Z",
 	"@context": [
 		"https://www.w3.org/2019/wot/td/v1"
 	],
+	"@type": "Thing",
 	"title": "Example SDF model for the ZCL Level cluster"
 }

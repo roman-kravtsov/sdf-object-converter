@@ -18,6 +18,17 @@ class SDFObjectConverter extends Converter {
       events: {},
     });
     this.sdfObject = SDFObject;
+    const rootObjectKey = Object.keys(this.sdfObject.sdfObject)[0];
+    this.rootObject = this.sdfObject.sdfObject[rootObjectKey];
+  }
+
+  __isRequired(propertyName) {
+    for (const requiredObject of this.rootObject.sdfRequired) {
+      if (requiredObject.indexOf(propertyName) !== -1) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
@@ -94,6 +105,7 @@ class SDFObjectConverter extends Converter {
       // thingModelProperty.forms = this.__generateThingModelForms(
       //   thingModelProperty.forms[0].href
       // );
+      thingModelProperty.required = this.__isRequired(property);
       this.targetModel.properties[property] = thingModelProperty;
     }
   }
@@ -119,6 +131,7 @@ class SDFObjectConverter extends Converter {
       // thingModelAction.forms = this.__generateThingModelForms(
       //   thingModelAction.forms[0].href
       // );
+      thingModelAction.required = this.__isRequired(property);
       this.targetModel.actions[property] = thingModelAction;
     }
   }
@@ -145,6 +158,7 @@ class SDFObjectConverter extends Converter {
       // thingModelEvent.forms = this.__generateThingModelForms(
       //   thingModelEvent.forms[0].href
       // );
+      thingModelEvent.required = this.__isRequired(property);
       this.targetModel.events[property] = thingModelEvent;
     }
   }
