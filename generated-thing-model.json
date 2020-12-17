@@ -2,197 +2,121 @@
 	"properties": {
 		"CurrentLevel": {
 			"name": "CurrentLevel",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 254,
 			"required": true
 		},
 		"RemainingTime": {
 			"name": "RemainingTime",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 65535,
+			"multipleOf": 1,
 			"required": false
 		},
 		"MinLevel": {
 			"name": "MinLevel",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 254,
 			"required": false
 		},
 		"MaxLevel": {
 			"name": "MaxLevel",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 254,
 			"required": false
 		},
 		"CurrentFrequency": {
 			"name": "CurrentFrequency",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 65535,
 			"required": false
 		},
 		"MinFrequency": {
 			"name": "MinFrequency",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 65535,
 			"required": false
 		},
 		"MaxFrequency": {
 			"name": "MaxFrequency",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 65535,
 			"required": false
 		},
 		"OnOffTransitionTime": {
 			"name": "OnOffTransitionTime",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 65535,
+			"multipleOf": 1,
 			"required": false
 		},
 		"OnLevel": {
 			"name": "OnLevel",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 255,
+			"default": 255,
 			"required": false
 		},
 		"OnTransitionTime": {
 			"name": "OnTransitionTime",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 65535,
+			"multipleOf": 1,
 			"required": false
 		},
 		"OffTransitionTime": {
 			"name": "OffTransitionTime",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 65535,
+			"multipleOf": 1,
 			"required": false
 		},
 		"DefaultMoveRate": {
 			"name": "DefaultMoveRate",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 0,
+			"maximum": 254,
 			"required": false
 		},
 		"Options": {
 			"name": "Options",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
+			"description": "implemented as a bitmap, modeled as an array with unique items",
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "string",
+				"enum": [
+					"ExecuteIfOff",
+					"CoupleColorTempToLevel"
+				]
 			},
-			"readOnly": true,
 			"required": false
 		},
 		"StartUpCurrentLevel": {
 			"name": "StartUpCurrentLevel",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"minimum": 1,
+			"maximum": 254,
 			"required": false
 		},
 		"StartUpCurrentLevelSpecialValues": {
 			"name": "StartUpCurrentLevelSpecialValues",
-			"input": {
-				"type": "boolean",
-				"properties": {
-					"value": {
-						"type": "boolean"
-					}
-				}
-			},
-			"readOnly": true,
+			"type": "number",
+			"enum": [
+				"MinimumDeviceValuePermitted",
+				"SetToPreviousValue"
+			],
 			"required": false
 		}
 	},
@@ -303,8 +227,8 @@
 			"required": false
 		}
 	},
-	"created": "2020-12-17T15:48:26.027Z",
-	"modified": "2020-12-17T15:48:26.027Z",
+	"created": "2020-12-17T16:53:43.891Z",
+	"modified": "2020-12-17T16:53:43.891Z",
 	"@context": [
 		"https://www.w3.org/2019/wot/td/v1"
 	],

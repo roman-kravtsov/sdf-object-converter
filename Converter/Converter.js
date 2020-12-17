@@ -40,18 +40,12 @@ class Converter {
    * Generate a Thing Model Property
    *
    * @param {String} name Property name
+   * @param {Object} data Property data
    */
-  __generateThingProperty(name) {
+  __generateThingProperty(name, data) {
     return {
       name,
-      input: {
-        type: "boolean",
-        properties: {
-          value: {
-            type: "boolean",
-          },
-        },
-      },
+      ...data,
       // forms: [
       //   {
       //     href: `/actions/${name}`,

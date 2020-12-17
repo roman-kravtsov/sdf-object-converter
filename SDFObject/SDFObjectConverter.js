@@ -1,4 +1,5 @@
 const Converter = require("../Converter/Converter");
+const _ = require("lodash");
 /**
  * A SDFObject Model
  * @typedef {Object} SDFObjectModel
@@ -71,25 +72,14 @@ class SDFObjectConverter extends Converter {
   }
 
   /**
-   *
-   *
-   * @param {*} sdfObject
-   * @param {*} objectName
-   * @param {*} dataName
-   */
-  __getSDFObjectData(objectName, dataName) {
-    return this.sdfObject.sdfObject[objectName].sdfData[dataName];
-  }
-
-  /**
    * Get a referenced sdfData
    *
    * @param {Object} sdfObject
    * @param {String} ref
    */
-  __getSDFObjectRef(objectName, ref) {
-    const dataName = ref.match(/\w+$/)[0];
-    return this.__getSDFObjectData(objectName, dataName);
+  __getSDFObjectRef(ref) {
+    const accessKey = ref.replace("#/", "").split("/").join(".");
+    return _.get(this.sdfObject, accessKey);
   }
 
   /**
@@ -100,11 +90,17 @@ class SDFObjectConverter extends Converter {
     const key = Object.keys(this.sdfObject.sdfObject)[0];
     for (let property in this.__getRootObject().sdfProperty) {
       const sdfProperty = this.__getSDFObjectProperty(key, property);
-      let thingModelProperty = this.__generateThingProperty(
-        property,
-        sdfProperty.type
-      );
-      thingModelProperty.readOnly = !sdfProperty.writable;
+      let thingModelProperty;
+      if (sdfProperty.sdfRef) {
+        const sdfData = this.__getSDFObjectRef(sdfProperty.sdfRef);
+        thingModelProperty = this.__generateThingProperty(property, sdfData);
+      } else {
+        delete sdfProperty.label;
+        thingModelProperty = this.__generateThingProperty(
+          property,
+          sdfProperty
+        );
+      }
       // thingModelProperty.forms = this.__generateThingModelForms(
       //   thingModelProperty.forms[0].href
       // );
@@ -125,7 +121,6 @@ class SDFObjectConverter extends Converter {
       for (let inputObjectKey in sdfAction.sdfData) {
         if (sdfAction.sdfData[inputObjectKey].sdfRef) {
           thingModelAction.input = this.__getSDFObjectRef(
-            key,
             sdfAction.sdfData[inputObjectKey].sdfRef
           );
         }
@@ -152,7 +147,6 @@ class SDFObjectConverter extends Converter {
       for (let inputObjectKey in sdfEvent.sdfOutputData) {
         if (sdfEvent.sdfOutputData[inputObjectKey].sdfRef) {
           thingModelEvent.data = this.__getSDFObjectRef(
-            key,
             sdfEvent.sdfOutputData[inputObjectKey].sdfRef
           );
         }
