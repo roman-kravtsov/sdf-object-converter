@@ -18,12 +18,15 @@ class SDFObjectConverter extends Converter {
       events: {},
     });
     this.sdfObject = SDFObject;
+  }
+
+  __getRootObject() {
     const rootObjectKey = Object.keys(this.sdfObject.sdfObject)[0];
-    this.rootObject = this.sdfObject.sdfObject[rootObjectKey];
+    return this.sdfObject.sdfObject[rootObjectKey];
   }
 
   __isRequired(propertyName) {
-    for (const requiredObject of this.rootObject.sdfRequired) {
+    for (const requiredObject of this.__getRootObject().sdfRequired) {
       if (requiredObject.indexOf(propertyName) !== -1) {
         return true;
       }
@@ -95,7 +98,7 @@ class SDFObjectConverter extends Converter {
    */
   mapProperties() {
     const key = Object.keys(this.sdfObject.sdfObject)[0];
-    for (let property in this.sdfObject.sdfObject[key].sdfProperty) {
+    for (let property in this.__getRootObject().sdfProperty) {
       const sdfProperty = this.__getSDFObjectProperty(key, property);
       let thingModelProperty = this.__generateThingProperty(
         property,
@@ -116,7 +119,7 @@ class SDFObjectConverter extends Converter {
    */
   mapActions() {
     const key = Object.keys(this.sdfObject.sdfObject)[0];
-    for (let property in this.sdfObject.sdfObject[key].sdfAction) {
+    for (let property in this.__getRootObject().sdfAction) {
       const sdfAction = this.__getSDFObjectAction(key, property);
       let thingModelAction = this.__generateThingAction(property);
       for (let inputObjectKey in sdfAction.sdfData) {
@@ -142,7 +145,7 @@ class SDFObjectConverter extends Converter {
    */
   mapEvents() {
     const key = Object.keys(this.sdfObject.sdfObject)[0];
-    for (let property in this.sdfObject.sdfObject[key].sdfEvent) {
+    for (let property in this.__getRootObject().sdfEvent) {
       const sdfEvent = this.__getSDFObjectEvent(key, property);
       let thingModelEvent = this.__generateThingEvent(property);
 
