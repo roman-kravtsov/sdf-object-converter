@@ -46,12 +46,6 @@ class Converter {
     return {
       name,
       ...data,
-      // forms: [
-      //   {
-      //     href: `/actions/${name}`,
-      //     contentType: 'application/json',
-      //   },
-      // ],
     };
   }
 
@@ -64,7 +58,6 @@ class Converter {
     return {
       name,
       input: {},
-      // forms: [{ href: `/properties/${name}` }],
     };
   }
 
@@ -77,7 +70,6 @@ class Converter {
     return {
       name,
       input: {},
-      // forms: [{ href: `/properties/${name}` }],
     };
   }
 
