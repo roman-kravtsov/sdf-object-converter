@@ -14,9 +14,9 @@ const _ = require("lodash");
 class SDFObjectConverter extends Converter {
   constructor(SDFObject) {
     super({
-      properties: {},
-      actions: {},
-      events: {},
+      properties: { required: [] },
+      actions: { required: [] },
+      events: { required: [] },
     });
     this.sdfObject = SDFObject;
   }
@@ -104,7 +104,9 @@ class SDFObjectConverter extends Converter {
       // thingModelProperty.forms = this.__generateThingModelForms(
       //   thingModelProperty.forms[0].href
       // );
-      thingModelProperty.required = this.__isRequired(property);
+      if (this.__isRequired(property)) {
+        this.targetModel.properties.required.push(property);
+      }
       this.targetModel.properties[property] = thingModelProperty;
     }
   }
@@ -129,7 +131,9 @@ class SDFObjectConverter extends Converter {
       // thingModelAction.forms = this.__generateThingModelForms(
       //   thingModelAction.forms[0].href
       // );
-      thingModelAction.required = this.__isRequired(property);
+      if (this.__isRequired(property)) {
+        this.targetModel.actions.required.push(property);
+      }
       this.targetModel.actions[property] = thingModelAction;
     }
   }
@@ -155,7 +159,9 @@ class SDFObjectConverter extends Converter {
       // thingModelEvent.forms = this.__generateThingModelForms(
       //   thingModelEvent.forms[0].href
       // );
-      thingModelEvent.required = this.__isRequired(property);
+      if (this.__isRequired(property)) {
+        this.targetModel.events.required.push(property);
+      }
       this.targetModel.events[property] = thingModelEvent;
     }
   }

@@ -1,93 +1,84 @@
 {
 	"properties": {
+		"required": [
+			"CurrentLevel"
+		],
 		"CurrentLevel": {
 			"title": "CurrentLevel",
 			"type": "number",
 			"minimum": 0,
-			"maximum": 254,
-			"required": true
+			"maximum": 254
 		},
 		"RemainingTime": {
 			"title": "RemainingTime",
 			"type": "number",
 			"minimum": 0,
 			"maximum": 65535,
-			"multipleOf": 1,
-			"required": false
+			"multipleOf": 1
 		},
 		"MinLevel": {
 			"title": "MinLevel",
 			"type": "number",
 			"minimum": 0,
-			"maximum": 254,
-			"required": false
+			"maximum": 254
 		},
 		"MaxLevel": {
 			"title": "MaxLevel",
 			"type": "number",
 			"minimum": 0,
-			"maximum": 254,
-			"required": false
+			"maximum": 254
 		},
 		"CurrentFrequency": {
 			"title": "CurrentFrequency",
 			"type": "number",
 			"minimum": 0,
-			"maximum": 65535,
-			"required": false
+			"maximum": 65535
 		},
 		"MinFrequency": {
 			"title": "MinFrequency",
 			"type": "number",
 			"minimum": 0,
-			"maximum": 65535,
-			"required": false
+			"maximum": 65535
 		},
 		"MaxFrequency": {
 			"title": "MaxFrequency",
 			"type": "number",
 			"minimum": 0,
-			"maximum": 65535,
-			"required": false
+			"maximum": 65535
 		},
 		"OnOffTransitionTime": {
 			"title": "OnOffTransitionTime",
 			"type": "number",
 			"minimum": 0,
 			"maximum": 65535,
-			"multipleOf": 1,
-			"required": false
+			"multipleOf": 1
 		},
 		"OnLevel": {
 			"title": "OnLevel",
 			"type": "number",
 			"minimum": 0,
 			"maximum": 255,
-			"default": 255,
-			"required": false
+			"default": 255
 		},
 		"OnTransitionTime": {
 			"title": "OnTransitionTime",
 			"type": "number",
 			"minimum": 0,
 			"maximum": 65535,
-			"multipleOf": 1,
-			"required": false
+			"multipleOf": 1
 		},
 		"OffTransitionTime": {
 			"title": "OffTransitionTime",
 			"type": "number",
 			"minimum": 0,
 			"maximum": 65535,
-			"multipleOf": 1,
-			"required": false
+			"multipleOf": 1
 		},
 		"DefaultMoveRate": {
 			"title": "DefaultMoveRate",
 			"type": "number",
 			"minimum": 0,
-			"maximum": 254,
-			"required": false
+			"maximum": 254
 		},
 		"Options": {
 			"title": "Options",
@@ -100,15 +91,13 @@
 					"ExecuteIfOff",
 					"CoupleColorTempToLevel"
 				]
-			},
-			"required": false
+			}
 		},
 		"StartUpCurrentLevel": {
 			"title": "StartUpCurrentLevel",
 			"type": "number",
 			"minimum": 1,
-			"maximum": 254,
-			"required": false
+			"maximum": 254
 		},
 		"StartUpCurrentLevelSpecialValues": {
 			"title": "StartUpCurrentLevelSpecialValues",
@@ -116,11 +105,20 @@
 			"enum": [
 				"MinimumDeviceValuePermitted",
 				"SetToPreviousValue"
-			],
-			"required": false
+			]
 		}
 	},
 	"actions": {
+		"required": [
+			"MoveToLevel",
+			"Move",
+			"Step",
+			"Stop",
+			"MoveToLevelwithOnOff",
+			"MovewithOnOff",
+			"StepwithOnOff",
+			"StopwithOnOff"
+		],
 		"MoveToLevel": {
 			"title": "MoveToLevel",
 			"input": {
@@ -134,8 +132,7 @@
 						"CoupleColorTempToLevel"
 					]
 				}
-			},
-			"required": true
+			}
 		},
 		"Move": {
 			"title": "Move",
@@ -150,8 +147,7 @@
 						"CoupleColorTempToLevel"
 					]
 				}
-			},
-			"required": true
+			}
 		},
 		"Step": {
 			"title": "Step",
@@ -166,8 +162,7 @@
 						"CoupleColorTempToLevel"
 					]
 				}
-			},
-			"required": true
+			}
 		},
 		"Stop": {
 			"title": "Stop",
@@ -182,28 +177,23 @@
 						"CoupleColorTempToLevel"
 					]
 				}
-			},
-			"required": true
+			}
 		},
 		"MoveToLevelwithOnOff": {
 			"title": "MoveToLevelwithOnOff",
-			"input": {},
-			"required": true
+			"input": {}
 		},
 		"MovewithOnOff": {
 			"title": "MovewithOnOff",
-			"input": {},
-			"required": true
+			"input": {}
 		},
 		"StepwithOnOff": {
 			"title": "StepwithOnOff",
-			"input": {},
-			"required": true
+			"input": {}
 		},
 		"StopwithOnOff": {
 			"title": "StopwithOnOff",
-			"input": {},
-			"required": true
+			"input": {}
 		},
 		"MoveToClosestFrequency": {
 			"title": "MoveToClosestFrequency",
@@ -211,11 +201,11 @@
 				"type": "number",
 				"minimum": 0,
 				"maximum": 65535
-			},
-			"required": false
+			}
 		}
 	},
 	"events": {
+		"required": [],
 		"overLevelEvent": {
 			"title": "overLevelEvent",
 			"input": {},
@@ -223,12 +213,11 @@
 				"type": "number",
 				"minimum": 0,
 				"maximum": 254
-			},
-			"required": false
+			}
 		}
 	},
-	"created": "2021-02-08T06:33:56.292Z",
-	"modified": "2021-02-08T06:33:56.292Z",
+	"created": "2021-02-08T06:42:32.656Z",
+	"modified": "2021-02-08T06:42:32.656Z",
 	"@context": [
 		"https://www.w3.org/2019/wot/td/v1"
 	],
