@@ -44,7 +44,7 @@ class Converter {
    */
   __generateThingProperty(name, data) {
     return {
-      name,
+      title: name,
       ...data,
     };
   }
@@ -56,7 +56,7 @@ class Converter {
    */
   __generateThingAction(name) {
     return {
-      name,
+      title: name,
       input: {},
     };
   }
@@ -68,7 +68,7 @@ class Converter {
    */
   __generateThingEvent(name) {
     return {
-      name,
+      title: name,
       input: {},
     };
   }
