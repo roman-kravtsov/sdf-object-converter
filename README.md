@@ -43,7 +43,6 @@ If an `sdfProperty`, `sdfAction` or `sdfEvent` property contain an `sdfRef`, the
 # To Do
 1. Reference logic is also supported by Thing Model and json-ld. A referenced object in a `SDF Object` will also be mapped to the `definitions` property of a Thing Model, therefore all following properties of a Thing Model will also reference to a corresponding object.
 2. Support `sdfChoice` data type. Properly map it to `enum` type.
-3. Support `sdfRequired` property by mapping it to the referred property and adding a `required: true` keypair.
 
 # Acknowledgements
 1. `uniqueItems` data quality is currently not supported.
