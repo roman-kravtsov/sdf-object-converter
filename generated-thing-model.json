@@ -1,226 +1,47 @@
 {
 	"properties": {
-		"required": [
-			"CurrentLevel"
-		],
-		"CurrentLevel": {
-			"title": "CurrentLevel",
+		"status": {
+			"title": "status",
+			"description": "Status of the alarm.",
+			"type": "boolean",
+			"writable": true
+		},
+		"duration": {
+			"title": "duration",
+			"description": "Alarm duration (seconds).",
 			"type": "number",
 			"minimum": 0,
-			"maximum": 254
+			"writable": true
 		},
-		"RemainingTime": {
-			"title": "RemainingTime",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 65535,
-			"multipleOf": 1
+		"time": {
+			"title": "time",
+			"description": "Alarm time in ISO 8601 format.",
+			"type": "string",
+			"writable": true
 		},
-		"MinLevel": {
-			"title": "MinLevel",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 254
-		},
-		"MaxLevel": {
-			"title": "MaxLevel",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 254
-		},
-		"CurrentFrequency": {
-			"title": "CurrentFrequency",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 65535
-		},
-		"MinFrequency": {
-			"title": "MinFrequency",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 65535
-		},
-		"MaxFrequency": {
-			"title": "MaxFrequency",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 65535
-		},
-		"OnOffTransitionTime": {
-			"title": "OnOffTransitionTime",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 65535,
-			"multipleOf": 1
-		},
-		"OnLevel": {
-			"title": "OnLevel",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 255,
-			"default": 255
-		},
-		"OnTransitionTime": {
-			"title": "OnTransitionTime",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 65535,
-			"multipleOf": 1
-		},
-		"OffTransitionTime": {
-			"title": "OffTransitionTime",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 65535,
-			"multipleOf": 1
-		},
-		"DefaultMoveRate": {
-			"title": "DefaultMoveRate",
-			"type": "number",
-			"minimum": 0,
-			"maximum": 254
-		},
-		"Options": {
-			"title": "Options",
-			"description": "implemented as a bitmap, modeled as an array with unique items",
-			"type": "array",
-			"uniqueItems": true,
-			"items": {
-				"type": "string",
-				"enum": [
-					"ExecuteIfOff",
-					"CoupleColorTempToLevel"
-				]
-			}
-		},
-		"StartUpCurrentLevel": {
-			"title": "StartUpCurrentLevel",
-			"type": "number",
-			"minimum": 1,
-			"maximum": 254
-		},
-		"StartUpCurrentLevelSpecialValues": {
-			"title": "StartUpCurrentLevelSpecialValues",
-			"type": "number",
+		"alarmtype": {
+			"title": "alarmtype",
+			"description": "The Alarm Type.",
+			"type": "string",
 			"enum": [
-				"MinimumDeviceValuePermitted",
-				"SetToPreviousValue"
-			]
+				"General",
+				"Fire",
+				"Security",
+				"Weather"
+			],
+			"writable": false
 		}
 	},
-	"actions": {
-		"required": [
-			"MoveToLevel",
-			"Move",
-			"Step",
-			"Stop",
-			"MoveToLevelwithOnOff",
-			"MovewithOnOff",
-			"StepwithOnOff",
-			"StopwithOnOff"
-		],
-		"MoveToLevel": {
-			"title": "MoveToLevel",
-			"input": {
-				"description": "implemented as a bitmap, modeled as an array with unique items",
-				"type": "array",
-				"uniqueItems": true,
-				"items": {
-					"type": "string",
-					"enum": [
-						"ExecuteIfOff",
-						"CoupleColorTempToLevel"
-					]
-				}
-			}
-		},
-		"Move": {
-			"title": "Move",
-			"input": {
-				"description": "implemented as a bitmap, modeled as an array with unique items",
-				"type": "array",
-				"uniqueItems": true,
-				"items": {
-					"type": "string",
-					"enum": [
-						"ExecuteIfOff",
-						"CoupleColorTempToLevel"
-					]
-				}
-			}
-		},
-		"Step": {
-			"title": "Step",
-			"input": {
-				"description": "implemented as a bitmap, modeled as an array with unique items",
-				"type": "array",
-				"uniqueItems": true,
-				"items": {
-					"type": "string",
-					"enum": [
-						"ExecuteIfOff",
-						"CoupleColorTempToLevel"
-					]
-				}
-			}
-		},
-		"Stop": {
-			"title": "Stop",
-			"input": {
-				"description": "implemented as a bitmap, modeled as an array with unique items",
-				"type": "array",
-				"uniqueItems": true,
-				"items": {
-					"type": "string",
-					"enum": [
-						"ExecuteIfOff",
-						"CoupleColorTempToLevel"
-					]
-				}
-			}
-		},
-		"MoveToLevelwithOnOff": {
-			"title": "MoveToLevelwithOnOff",
-			"input": {}
-		},
-		"MovewithOnOff": {
-			"title": "MovewithOnOff",
-			"input": {}
-		},
-		"StepwithOnOff": {
-			"title": "StepwithOnOff",
-			"input": {}
-		},
-		"StopwithOnOff": {
-			"title": "StopwithOnOff",
-			"input": {}
-		},
-		"MoveToClosestFrequency": {
-			"title": "MoveToClosestFrequency",
-			"input": {
-				"type": "number",
-				"minimum": 0,
-				"maximum": 65535
-			}
-		}
-	},
-	"events": {
-		"required": [],
-		"overLevelEvent": {
-			"title": "overLevelEvent",
-			"input": {},
-			"data": {
-				"type": "number",
-				"minimum": 0,
-				"maximum": 254
-			}
-		}
-	},
-	"created": "2021-02-08T06:42:32.656Z",
-	"modified": "2021-02-08T06:42:32.656Z",
+	"actions": {},
+	"events": {},
+	"tm:required": [
+		"#/properties/status"
+	],
+	"created": "2021-05-03T14:11:47.027Z",
+	"modified": "2021-05-03T14:11:47.027Z",
 	"@context": [
 		"https://www.w3.org/2019/wot/td/v1"
 	],
-	"@type": "Thing",
-	"title": "Example SDF model for the ZCL Level cluster"
+	"@type": "ThingModel",
+	"title": "Alarm"
 }

@@ -1,0 +1,35 @@
+{
+  "info": {
+    "title": "Alarm"
+  },
+  "sdfObject": {
+    "alarm": {
+      "description": "Properties associated with alarm status.",
+      "sdfProperty": {
+        "status": {
+          "description": "Status of the alarm.",
+          "type": "boolean",
+          "writable": true
+        },
+        "duration": {
+          "description": "Alarm duration (seconds).",
+          "type": "number",
+          "minimum": 0.0,
+          "writable": true
+        },
+        "time": {
+          "description": "Alarm time in ISO 8601 format.",
+          "type": "string",
+          "writable": true
+        },
+        "alarmtype": {
+          "description": "The Alarm Type.",
+          "type": "string",
+          "enum": ["General", "Fire", "Security", "Weather"],
+          "writable": false
+        }
+      },
+      "sdfRequired": ["#/sdfObject/alarm/sdfProperty/status"]
+    }
+  }
+}
