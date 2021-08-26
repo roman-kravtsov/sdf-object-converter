@@ -41,8 +41,7 @@ node index.js <Aboslute/Relative path to a SDF-Object.json file>
 If an `sdfProperty`, `sdfAction` or `sdfEvent` property contain an `sdfRef`, then the referenced object is searched and inserted directly in the corresponding property of a Thing Model.
 
 # To Do
-1. Reference logic is also supported by Thing Model and json-ld. A referenced object in a `SDF Object` will also be mapped to the `definitions` property of a Thing Model, therefore all following properties of a Thing Model will also reference to a corresponding object.
-2. Support `sdfChoice` data type. Properly map it to `enum` type.
+1. Support `sdfChoice` data type. Properly map it to `enum` type.
 
 # Acknowledgements
 1. `uniqueItems` data quality is currently not supported.
